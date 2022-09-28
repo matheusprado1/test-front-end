@@ -18,10 +18,11 @@ export const StyledContainer = styled.div`
         outline-color: #e6e6e6;
     }
 
-    .small{
+    .description{
         font-weight: 700;
         font-size: 11px;
         font-style: normal;
         color: #333333;
     }
+
 `
