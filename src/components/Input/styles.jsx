@@ -1,28 +1,28 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-    .subtile_input{
-        font-size: 14px;
-        color: #333333;
-    }
+  .container {
+    padding: 3%;
+  }
 
-    .form_input, .input{
-        padding: 3%;
-    }
+  .label {
+    font-size: 14px;
+    color: #333;
+  }
 
-    .input1{
-        height: 37px;
-        width: 240px;
-        border-radius: 4px;
-        border: 1px solid #e6e6e6;
-        outline-color: #e6e6e6;
-    }
+  .input {
+    height: 37px;
+    width: 240px;
+    border-radius: 4px;
+    padding: 0px 5px 0px 12px;
+    border: 1px solid #ccc;
+    outline-color: #333;
+  }
 
-    .description{
-        font-weight: 700;
-        font-size: 11px;
-        font-style: normal;
-        color: #333333;
-    }
-
-`
+  .description {
+    font-weight: 700;
+    font-size: 11px;
+    font-style: normal;
+    color: #333333;
+  }
+`;
