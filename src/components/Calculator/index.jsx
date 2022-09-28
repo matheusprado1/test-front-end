@@ -19,7 +19,7 @@ const Calculator = () => {
         </div>
         <div className="column2">
           <div className="result">
-            <h2 className="subtitle">Você receberá:</h2>
+            <h2 className="subtitle">VOCÊ RECEBERÁ:</h2>
           </div>
           <Result days="Amanhã" value="0,00"/>
           <Result days="Em 15 dias" value="0,00"/>
