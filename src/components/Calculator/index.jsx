@@ -6,7 +6,7 @@ import Result from "../Result/index.jsx";
 const Calculator = () => {
   return (
     <StyledContainer>
-      <div className="container">
+      <div className="main_container">
         <div className="column">
           <header>
             <div className="title">Simule sua Antecipação</div>
@@ -20,11 +20,11 @@ const Calculator = () => {
         <div className="column2">
           <div className="result">
             <h2 className="subtitle">VOCÊ RECEBERÁ:</h2>
+            <Result days="Amanhã" value="0,00" />
+            <Result days="Em 15 dias" value="0,00" />
+            <Result days="Em 30 dias" value="0,00" />
+            <Result days="Em 90 dias" value="0,00" />
           </div>
-          <Result days="Amanhã" value="0,00" />
-          <Result days="Em 15 dias" value="0,00" />
-          <Result days="Em 30 dias" value="0,00" />
-          <Result days="Em 90 dias" value="0,00" />
         </div>
       </div>
     </StyledContainer>
