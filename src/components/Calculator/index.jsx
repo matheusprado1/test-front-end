@@ -1,6 +1,7 @@
 import { StyledContainer } from "./styles.jsx";
 
 import Input from "../Input/index.jsx";
+import Result from "../Result/index.jsx";
 
 const Calculator = () => {
   return (
@@ -13,7 +14,7 @@ const Calculator = () => {
           <Input/>
         </div>
         <div className="column2">
-          <label></label>
+          <Result/>
         </div>
       </div>
     </StyledContainer>
