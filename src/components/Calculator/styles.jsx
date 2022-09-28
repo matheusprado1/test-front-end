@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledContainer = styled.div`
   .container {
     display: flex;
-    flex-wrap: nowrap;
+    /* flex-wrap: nowrap; */
     border: 2px solid #e6e6e6;
   }
   .title {
@@ -19,7 +19,7 @@ export const StyledContainer = styled.div`
     color: blue;
   }
 
-  .result{
+  .result {
     display: flex;
     align-items: center;
     flex-direction: column;

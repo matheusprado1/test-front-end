@@ -12,19 +12,19 @@ const Calculator = () => {
             <div className="title">Simule sua Antecipação</div>
           </header>
           <form action="" className="form">
-            <Input label="Informe o valor da venda"/>
-            <Input label="Em quantas parcelas" hint="Máximo de 12 parcelas"/>
-            <Input label="Informe o percentual de MDR"/>
+            <Input label="Informe o valor da venda" />
+            <Input label="Em quantas parcelas" hint="Máximo de 12 parcelas" />
+            <Input label="Informe o percentual de MDR" />
           </form>
         </div>
         <div className="column2">
           <div className="result">
             <h2 className="subtitle">VOCÊ RECEBERÁ:</h2>
           </div>
-          <Result days="Amanhã" value="0,00"/>
-          <Result days="Em 15 dias" value="0,00"/>
-          <Result days="Em 30 dias" value="0,00"/>
-          <Result days="Em 90 dias" value="0,00"/>
+          <Result days="Amanhã" value="0,00" />
+          <Result days="Em 15 dias" value="0,00" />
+          <Result days="Em 30 dias" value="0,00" />
+          <Result days="Em 90 dias" value="0,00" />
         </div>
       </div>
     </StyledContainer>
