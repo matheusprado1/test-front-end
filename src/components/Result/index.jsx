@@ -3,9 +3,10 @@ import { StyledContainer } from "./styles";
 const Result = ({ days, value }) => {
   return (
     <StyledContainer>
-      <div className="container">
-        <p className="text">{days}</p>
-        <strong className="strong">R$ {value}</strong>
+      <div>
+        <p className="text">
+          {days}: <strong>R$ {value}</strong>
+        </p>
       </div>
     </StyledContainer>
   );
