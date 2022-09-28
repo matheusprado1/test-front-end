@@ -3,7 +3,7 @@ import { StyledContainer } from "./styles.jsx";
 const Input = ({ label, hint }) => {
   return (
     <StyledContainer>
-      <div className="container">
+      <div className="input_container">
         <label className="label">
           {label}
           <strong>*</strong>
