@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const StyledContainer = styled.div`
-  .main_container {
+  .calculator_container {
     display: flex;
     flex-wrap: nowrap;
     border: 1px solid #dde6e9;
+    width: 50%;
   }
   .title {
     margin-top: 12%;
@@ -19,21 +20,10 @@ export const StyledContainer = styled.div`
     color: #3d75bb;
   }
 
-  .result {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 23% 0%;
-    background-color: rgba(209, 220, 227, 0.18)
-  }
-
   .column {
-    padding: 0 10%;
-    width: 25vw;
+    padding: 0 12%;
+    width: 26vw;
     background: #fff;
   }
 
-  .column2 {
-    width: 20vw;
-  }
 `;
