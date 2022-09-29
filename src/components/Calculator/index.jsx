@@ -1,30 +1,80 @@
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useContext } from "react";
+import { ApiContext } from "../../provider/ApiProvider/index.jsx";
+
 import { StyledContainer } from "./styles.jsx";
 
 import Input from "../Input/index.jsx";
-import Result from "../Result/index.jsx";
 
 const Calculator = () => {
+  const { insertCalculation } = useContext(ApiContext);
+
+  const schema = yup.object().shape({
+    amount: yup
+      .number("O valor deve ser um número")
+      .required("Campo obrigatório")
+      .typeError("Campo obrigatório")
+      .min(1000, "Valor mínimo de R$ 1.000,00"),
+    installments: yup
+      .number("O valor deve ser um número")
+      .required("Campo obrigatório")
+      .typeError("Campo obrigatório")
+      .max(12, "Valor máximo de 12 parcelas"),
+    mdr: yup
+      .number()
+      .required("Campo obrigatório")
+      .typeError("Campo obrigatório")
+      .min(1, "Valor mínimo de 1%"),
+  });
+
+  const {
+    register,
+    setValue,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmitFunction = (obj) => {
+    insertCalculation(obj);
+    setValue("amount", "");
+    setValue("installments", "");
+    setValue("mdr", "");
+  };
   return (
     <StyledContainer>
-      <div className="main_container">
+      <div className="calculator_container">
         <div className="column">
           <header>
             <div className="title">Simule sua Antecipação</div>
           </header>
-          <form action="" className="form">
-            <Input label="Informe o valor da venda" />
-            <Input label="Em quantas parcelas" hint="Máximo de 12 parcelas" />
-            <Input label="Informe o percentual de MDR" />
+          <form onChange={handleSubmit(onSubmitFunction)} className="form">
+            <Input
+              label="Informe o valor da venda"
+              placeholder="Ex: R$ 1000,00"
+              register={register}
+              name="amount"
+              error={errors.amount?.message}
+            />
+            <Input
+              label="Em quantas parcelas"
+              placeholder="Ex: 3"
+              hint={"Máximo de 12 parcelas"}
+              register={register}
+              name="installments"
+              error={errors.installments?.message}
+            />
+            <Input
+              label="Informe o percentual de MDR"
+              placeholder="Ex: 2%"
+              register={register}
+              name="mdr"
+              error={errors.mdr?.message}
+            />
           </form>
-        </div>
-        <div className="column2">
-          <div className="result">
-            <h2 className="subtitle">VOCÊ RECEBERÁ:</h2>
-            <Result days="Amanhã" value="0,00" />
-            <Result days="Em 15 dias" value="0,00" />
-            <Result days="Em 30 dias" value="0,00" />
-            <Result days="Em 90 dias" value="0,00" />
-          </div>
         </div>
       </div>
     </StyledContainer>
