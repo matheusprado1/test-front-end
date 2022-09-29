@@ -1,14 +1,14 @@
 import { StyledContainer } from "./styles.jsx";
 
-const Input = ({ label, hint }) => {
+const Input = ({ label, hint, register, name, error, span, ...rest }) => {
   return (
     <StyledContainer>
       <div className="input_container">
         <label className="label">
-          {label}
-          <strong>*</strong>
+          {label} {!!error && <span className="error">{error}</span>}
+          <strong> * </strong>
         </label>
-        <input className="input" />
+        <input className="input" {...register(name)} {...rest} />
         <span className="description">{hint}</span>
       </div>
     </StyledContainer>
