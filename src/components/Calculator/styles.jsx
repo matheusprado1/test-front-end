@@ -2,16 +2,25 @@ import styled from "styled-components";
 
 export const StyledContainer = styled.div`
   .calculator_container {
+    width: 100%;
+    height: 100%;
     display: flex;
-    flex-wrap: nowrap;
-    border: 1px solid #dde6e9;
-    width: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
   }
   .title {
     margin-top: 12%;
     padding: 5%;
-    font-size: 22px;
+    font-size: 15px;
     color: #333333;
+  }
+
+  .form {
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
   }
 
   .subtitle {
@@ -21,9 +30,29 @@ export const StyledContainer = styled.div`
   }
 
   .column {
-    padding: 0 12%;
-    width: 26vw;
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    justify-content: space-around;
     background: #fff;
   }
 
+  @media (min-width: 768px) {
+    width: 450px;
+    height: 100%;
+    .column {
+      padding-left: 0px;
+    }
+    .title {
+      margin-top: 12%;
+      padding: 5%;
+      font-size: 22px;
+    }
+    .form {
+      .subtitle {
+        font-size: 1.75rem;
+        height: 37px;
+      }
+    }
+  }
 `;
