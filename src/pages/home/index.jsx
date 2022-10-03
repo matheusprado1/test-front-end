@@ -1,5 +1,6 @@
 import Calculator from "../../components/Calculator";
 import Result from "../../components/Result";
+import Button from "../../components/Button";
 import { StyledContainer } from "./styles";
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
         <Calculator />
         <Result />
       </div>
+      <Button />
     </StyledContainer>
   );
 };
