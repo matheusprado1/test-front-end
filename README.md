@@ -37,7 +37,7 @@ Para fazer o deploy desse projeto instale o pacote do Vercel CLI globalmente
   yarn i -g vercel
 ```
 
-Depois rode :
+Depois rode
 
 ```bash
   vercel --build-env CI=false
