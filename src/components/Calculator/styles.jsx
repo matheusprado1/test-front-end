@@ -10,10 +10,9 @@ export const StyledContainer = styled.div`
     background-color: #fff;
   }
   .title {
-    margin-top: 12%;
-    padding: 5%;
+    color: #656565;
     font-size: 15px;
-    color: #333333;
+    font-weight: 700;
   }
 
   .form {
@@ -44,8 +43,6 @@ export const StyledContainer = styled.div`
       padding-left: 0px;
     }
     .title {
-      margin-top: 12%;
-      padding: 5%;
       font-size: 22px;
     }
     .form {
