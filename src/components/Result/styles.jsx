@@ -9,29 +9,37 @@ export const StyledContainer = styled.div`
   flex-direction: column;
 
   .result {
-    width: 50%;
-    height: 20%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  @media (min-width: 768px) {
-    width: 300px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
   .result_container {
-    line-height: 1.8;
     font-style: italic;
     color: #5d9cec;
+    line-height: 30px;;
   }
 
   .result_title {
     font-style: italic;
+    font-weight: 900;
     color: #5d9cec;
-    border-bottom: 2px solid #5d9cec;
+    border-bottom: 1px solid #5d9cec;
     font-size: 16px;
   }
+  .total{
+    font-weight: 900;
+  }
 
+  @media (min-width: 768px) {
+    width: 231px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    .result_title {
+      width: 159px;
+    }
+    .result_container {
+      line-height: 46px;
+    }
+  }
 `;
