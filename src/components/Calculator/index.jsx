@@ -9,23 +9,31 @@ import { StyledContainer } from "./styles.jsx";
 import Input from "../Input/index.jsx";
 
 const Calculator = () => {
-  const { insertCalculation } = useContext(ApiContext);
+  const {
+    insertCalculation,
+    delay,
+    error,
+    time,
+    testDelay,
+    testError,
+    testTime,
+  } = useContext(ApiContext);
 
   const schema = yup.object().shape({
     amount: yup
-      .number("O valor deve ser um número")
-      .required("Campo obrigatório")
+      .number()
       .typeError("Campo obrigatório")
+      .required("Campo obrigatório")
       .min(1000, "Valor mínimo de R$ 1.000,00"),
     installments: yup
-      .number("O valor deve ser um número")
-      .required("Campo obrigatório")
+      .number()
       .typeError("Campo obrigatório")
+      .required("Campo obrigatório")
       .max(12, "Valor máximo de 12 parcelas"),
     mdr: yup
       .number()
-      .required("Campo obrigatório")
       .typeError("Campo obrigatório")
+      .required("Campo obrigatório")
       .min(1, "Valor mínimo de 1%"),
   });
 
@@ -39,11 +47,29 @@ const Calculator = () => {
   });
 
   const onSubmitFunction = (obj) => {
-    insertCalculation(obj);
-    setValue("amount", "");
-    setValue("installments", "");
-    setValue("mdr", "");
+    if (delay) {
+      testDelay(obj);
+      setValue("amount", "");
+      setValue("installments", "");
+      setValue("mdr", "");
+    } else if (error) {
+      testError(obj);
+      setValue("amount", "");
+      setValue("installments", "");
+      setValue("mdr", "");
+    } else if (time) {
+      testTime(obj);
+      setValue("amount", "");
+      setValue("installments", "");
+      setValue("mdr", "");
+    } else {
+      insertCalculation(obj);
+      setValue("amount", "");
+      setValue("installments", "");
+      setValue("mdr", "");
+    }
   };
+
   return (
     <StyledContainer>
       <div className="calculator_container">
@@ -53,14 +79,14 @@ const Calculator = () => {
           </header>
           <form onChange={handleSubmit(onSubmitFunction)} className="form">
             <Input
-              label="Informe o valor da venda"
+              label="Informe o valor da venda *"
               placeholder="Ex: R$ 1000,00"
               register={register}
               name="amount"
               error={errors.amount?.message}
             />
             <Input
-              label="Em quantas parcelas"
+              label="Em quantas parcelas *"
               placeholder="Ex: 3"
               hint={"Máximo de 12 parcelas"}
               register={register}
@@ -68,7 +94,7 @@ const Calculator = () => {
               error={errors.installments?.message}
             />
             <Input
-              label="Informe o percentual de MDR"
+              label="Informe o percentual de MDR *"
               placeholder="Ex: 2%"
               register={register}
               name="mdr"
