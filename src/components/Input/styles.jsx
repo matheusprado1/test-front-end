@@ -9,8 +9,9 @@ export const StyledContainer = styled.div`
 
   .label {
     font-size: 13px;
-    color: #333;
+    color: #656565;
     text-align: left;
+    width: 200px;
   }
 
   .error {
@@ -28,6 +29,12 @@ export const StyledContainer = styled.div`
     outline-color: #66afe9;
   }
 
+  .description {
+    font-weight: 100;
+    font-size: 10px;
+    color: #CECECE;
+  }
+
   @media (min-width: 768px) {
     .input {
       height: 37px;
@@ -38,9 +45,4 @@ export const StyledContainer = styled.div`
     }
   }
 
-  .description {
-    font-weight: 100;
-    font-size: 10px;
-    color: #333333;
-  }
 `;
