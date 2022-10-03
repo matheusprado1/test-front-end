@@ -1,6 +1,7 @@
 import "./App.css";
 import { ToastContainer } from "react-toastify";
 import Home from "./pages/home";
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
