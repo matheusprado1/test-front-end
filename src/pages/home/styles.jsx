@@ -8,12 +8,13 @@ export const StyledContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   .main_container {
-    width: 200%;
+    width: 91%;
     height: 50%;
     border: 1px solid #d1dce3;
     border-radius: 4px;
     display: flex;
     flex-direction: column;
+
     @media (min-width: 768px) {
       width: 750px;
       height: 400px;
@@ -23,9 +24,5 @@ export const StyledContainer = styled.div`
       width: 90%;
       height: 800px;
     }
-  }
-  @media (min-width: 768px) {
-    height: 100vh;
-    width: 100vw;
   }
 `;
