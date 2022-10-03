@@ -6,7 +6,6 @@ const Input = ({ label, hint, register, name, error, span, ...rest }) => {
       <div className="input_container">
         <label className="label">
           {label} {!!error && <span className="error">{error}</span>}
-          <strong> * </strong>
         </label>
         <input className="input" {...register(name)} {...rest} />
         <span className="description">{hint}</span>
